@@ -1,5 +1,6 @@
 {
   "name": "drupal/drop_ship",
+  "type": "drupal-module",
   "repositories": [
     {
       "type": "composer",
