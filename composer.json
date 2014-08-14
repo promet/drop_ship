@@ -1,0 +1,16 @@
+{
+  "name": "drupal/drop_ship",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://static.drupal-packagist.org/v0.1.0"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:promet/kw_manifests"
+    }
+  ],
+  "require": {
+    "drupal/kw_manifests": "1.*"
+  }
+}
