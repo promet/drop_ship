@@ -109,6 +109,7 @@ function drop_ship_apply_module_dependencies() {
   // Enable the required modules and dependencies.
   $expected = array_merge(array_keys($required), array_keys($dependencies), $seeds);
   $result = module_enable($expected);
+  module_implements('', FALSE, TRUE);
   if (!$result) {
     return drush_set_error(dt('An unexpected error occured while trying to enable modules !modules', array('!modules', implode(', ', $expected))));
   }
