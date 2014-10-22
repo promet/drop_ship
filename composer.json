@@ -4,7 +4,7 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "http://static.drupal-packagist.org/v0.1.0"
+      "url": "http://static.drupal-packagist.org/v0.2.0"
     },
     {
       "type": "vcs",
@@ -12,6 +12,7 @@
     }
   ],
   "require": {
-    "drupal/kw_manifests": "1.*"
+    "drupal/kw_manifests": "1.*",
+    "drupal/features": "~7.2.2"
   }
 }
