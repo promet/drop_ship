@@ -4,19 +4,19 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4ebf4a03868f356f1e998038c759745",
+    "hash": "faf38ae00112b68bdf9d19d8c3ed59aa",
     "packages": [
         {
             "name": "drupal/drupal",
-            "version": "7.28.0",
+            "version": "7.31.0",
             "source": {
                 "type": "git",
                 "url": "http://git.drupal.org/project/drupal",
-                "reference": "23599090784700dea3675270d0eb242badf9fb28"
+                "reference": "b188e90ff3735804dd048779184c381dad163e45"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://ftp.drupal.org/files/projects/drupal-7.28.zip",
+                "url": "http://ftp.drupal.org/files/projects/drupal-7.31.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -81,41 +81,66 @@
             "description": "Handles general site configuration for administrators."
         },
         {
-            "name": "drupal/kw_manifests",
-            "version": "1.0.0",
+            "name": "drupal/features",
+            "version": "7.2.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/promet/kw_manifests.git",
-                "reference": "4423ccbf0a48e330b2af9a2f45338ea6895badf8"
+                "url": "http://git.drupal.org/project/features",
+                "reference": "9f4ecc71cd0c3c84f460483cabe28ec83b1820f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/promet/kw_manifests/zipball/4423ccbf0a48e330b2af9a2f45338ea6895badf8",
-                "reference": "4423ccbf0a48e330b2af9a2f45338ea6895badf8",
+                "url": "http://ftp.drupal.org/files/projects/features-7.x-2.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "description": "Provides feature management for Drupal."
+        },
+        {
+            "name": "drupal/kw_manifests",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/promet/kw_manifests.git",
+                "reference": "68eca6342bb3265898b650228dada9779032845e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/promet/kw_manifests/zipball/68eca6342bb3265898b650228dada9779032845e",
+                "reference": "68eca6342bb3265898b650228dada9779032845e",
                 "shasum": ""
             },
             "require": {
                 "drupal/drupal": "7.*",
                 "drush/drush": "6.*"
             },
-            "type": "library",
+            "type": "drupal-module",
             "support": {
-                "source": "https://github.com/promet/kw_manifests/tree/1.0.0"
+                "source": "https://github.com/promet/kw_manifests/tree/1.0.1"
             },
-            "time": "2014-08-14 20:49:52"
+            "time": "2014-08-14 21:30:55"
         },
         {
             "name": "drush/drush",
-            "version": "6.3.0",
+            "version": "6.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "b9e6c8c00da0fbf1227869cdf915b0c6cea466cc"
+                "reference": "fd4baef529c5d8afd6a44eea8f42b169b0a087e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/b9e6c8c00da0fbf1227869cdf915b0c6cea466cc",
-                "reference": "b9e6c8c00da0fbf1227869cdf915b0c6cea466cc",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/fd4baef529c5d8afd6a44eea8f42b169b0a087e6",
+                "reference": "fd4baef529c5d8afd6a44eea8f42b169b0a087e6",
                 "shasum": ""
             },
             "require": {
@@ -162,13 +187,12 @@
                 },
                 {
                     "name": "Jonathan Hedstrom",
-                    "email": "jhedstrom@gmail.com",
-                    "homepage": "http://professorbikeybike.com"
+                    "email": "jhedstrom@gmail.com"
                 }
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2014-05-27 13:12:35"
+            "time": "2014-08-29 02:23:51"
         }
     ],
     "packages-dev": [],
