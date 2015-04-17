@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "faf38ae00112b68bdf9d19d8c3ed59aa",
+    "hash": "bd3773f4dd62dda60c3edec79c1f98e6",
     "packages": [
         {
             "name": "drupal/drupal",
@@ -131,16 +131,16 @@
         },
         {
             "name": "drush/drush",
-            "version": "6.4.0",
+            "version": "6.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drush-ops/drush.git",
-                "reference": "fd4baef529c5d8afd6a44eea8f42b169b0a087e6"
+                "reference": "1779c6c37d56235935e99d849bb4c910b632428e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drush-ops/drush/zipball/fd4baef529c5d8afd6a44eea8f42b169b0a087e6",
-                "reference": "fd4baef529c5d8afd6a44eea8f42b169b0a087e6",
+                "url": "https://api.github.com/repos/drush-ops/drush/zipball/1779c6c37d56235935e99d849bb4c910b632428e",
+                "reference": "1779c6c37d56235935e99d849bb4c910b632428e",
                 "shasum": ""
             },
             "require": {
@@ -192,7 +192,7 @@
             ],
             "description": "Drush is a command line shell and scripting interface for Drupal, a veritable Swiss Army knife designed to make life easier for those of us who spend some of our working hours hacking away at the command prompt.",
             "homepage": "http://www.drush.org",
-            "time": "2014-08-29 02:23:51"
+            "time": "2015-03-26 02:02:45"
         }
     ],
     "packages-dev": [],
@@ -200,6 +200,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": [],
     "platform-dev": []
 }
