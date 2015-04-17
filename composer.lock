@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bd3773f4dd62dda60c3edec79c1f98e6",
+    "hash": "535c35be6759856b0c63c46165672bc4",
     "packages": [
         {
             "name": "drupal/drupal",
@@ -107,27 +107,27 @@
         },
         {
             "name": "drupal/kw_manifests",
-            "version": "1.0.1",
+            "version": "dev-1.1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/promet/kw_manifests.git",
-                "reference": "68eca6342bb3265898b650228dada9779032845e"
+                "reference": "198ccbbc0a72976c2f9603d291646198812651c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/promet/kw_manifests/zipball/68eca6342bb3265898b650228dada9779032845e",
-                "reference": "68eca6342bb3265898b650228dada9779032845e",
+                "url": "https://api.github.com/repos/promet/kw_manifests/zipball/198ccbbc0a72976c2f9603d291646198812651c8",
+                "reference": "198ccbbc0a72976c2f9603d291646198812651c8",
                 "shasum": ""
             },
             "require": {
                 "drupal/drupal": "7.*",
-                "drush/drush": "6.*"
+                "drush/drush": "6 - 7"
             },
             "type": "drupal-module",
             "support": {
-                "source": "https://github.com/promet/kw_manifests/tree/1.0.1"
+                "source": "https://github.com/promet/kw_manifests/tree/1.1.x-dev"
             },
-            "time": "2014-08-14 21:30:55"
+            "time": "2015-04-17 21:25:47"
         },
         {
             "name": "drush/drush",
@@ -198,7 +198,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/kw_manifests": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
