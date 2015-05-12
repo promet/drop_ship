@@ -42,7 +42,7 @@ function drop_ship_kw_manifests_info() {
 
 function drop_ship_views_revert() {
   module_load_include('inc', 'views', 'drush/views.drush');
-  views_revert_allviews(views_get_all_views());
+  views_revert_allviews(views_get_all_views(TRUE));
 }
 
 function drop_ship_features_revert() {
