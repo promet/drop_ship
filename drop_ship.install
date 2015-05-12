@@ -28,7 +28,21 @@ function drop_ship_kw_manifests_info() {
         )
       )
     ),
+    'views_revert' => array(
+      'callback' => 'drop_ship_views_revert',
+      'dependencies' => array(
+        array(
+          'module' => 'drop_ship',
+          'name' => 'features_revert',
+        ),
+      ),
+    ),
   );
+}
+
+function drop_ship_views_revert() {
+  module_load_include('inc', 'views', 'drush/views.drush');
+  views_revert_allviews();
 }
 
 function drop_ship_features_revert() {
