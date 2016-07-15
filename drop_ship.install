@@ -37,6 +37,15 @@ function drop_ship_kw_manifests_info() {
         ),
       ),
     ),
+    'configure_stage_file_proxy' => array(
+      'callback' => 'drop_ship_configure_stage_file_proxy',
+      'dependencies' => array(
+        array(
+          'module' => 'drop_ship',
+          'name' => 'features_revert',
+        ),
+      ),
+    ),
   );
 }
 
@@ -173,4 +182,18 @@ function drop_ship_apply_module_dependencies() {
 function drop_ship_update_db() {
   drush_set_context('DRUSH_AFFIRMATIVE', TRUE);
   drush_invoke('updatedb');
+}
+
+function drop_ship_configure_stage_file_proxy() {
+  $STAGE_FILE_PROXY_DOMAIN = getenv('STAGE_FILE_PROXY_DOMAIN');
+  $STAGE_FILE_PROXY_ORIGIN_DIR = getenv('STAGE_FILE_PROXY_FILES_DIR');
+
+  !module_exists('stage_file_proxy');
+  if ($STAGE_FILE_PROXY_DOMAIN && !empty($STAGE_FILE_PROXY_DOMAIN)) {
+    module_enable(array('stage_file_proxy'));
+    variable_set('stage_file_proxy_origin', $STAGE_FILE_PROXY_DOMAIN);
+    if ($STAGE_FILE_PROXY_ORIGIN_DIR && !empty($STAGE_FILE_PROXY_ORIGIN_DIR)) {
+      variable_set('stage_file_proxy_origin_dir', $STAGE_FILE_PROXY_ORIGIN_DIR);
+    }
+  }
 }
