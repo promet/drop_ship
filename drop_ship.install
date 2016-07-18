@@ -207,13 +207,13 @@ function drop_ship_update_db() {
  */
 function drop_ship_configure_stage_file_proxy() {
   $stage_file_proxy_domain = getenv('STAGE_FILE_PROXY_DOMAIN');
-  $STAGE_FILE_PROXY_ORIGIN_DIR = getenv('STAGE_FILE_PROXY_FILES_DIR');
+  $stage_file_proxy_origin_dir = getenv('STAGE_FILE_PROXY_FILES_DIR');
 
   if ($stage_file_proxy_domain && !empty($stage_file_proxy_domain)) {
     module_enable(array('stage_file_proxy'));
     variable_set('stage_file_proxy_origin', $stage_file_proxy_domain);
-    if ($STAGE_FILE_PROXY_ORIGIN_DIR && !empty($STAGE_FILE_PROXY_ORIGIN_DIR)) {
-      variable_set('stage_file_proxy_origin_dir', $STAGE_FILE_PROXY_ORIGIN_DIR);
+    if ($stage_file_proxy_origin_dir && !empty($stage_file_proxy_origin_dir)) {
+      variable_set('stage_file_proxy_origin_dir', $stage_file_proxy_origin_dir);
     }
   }
 }
