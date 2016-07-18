@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Implements hook_kw_manifests_info().
+ *
+ * @return array
+ */
 function drop_ship_kw_manifests_info() {
   return array(
     'update_db' => array(
@@ -49,6 +54,9 @@ function drop_ship_kw_manifests_info() {
   );
 }
 
+/**
+ * Reverts to match the code state.
+ */
 function drop_ship_views_revert() {
   module_load_include('inc', 'views', 'drush/views.drush');
   views_revert_allviews(views_get_all_views(TRUE));
@@ -85,6 +93,12 @@ function drop_ship_features_revert() {
   }
 }
 
+/**
+ * Builds the module dependency tree and ensures only required modules are
+ * enabled (uninstalling those not in the tree).
+ *
+ * @return mixed
+ */
 function drop_ship_apply_module_dependencies() {
   $seeds = func_get_args();
   $files = system_rebuild_module_data();
@@ -179,19 +193,25 @@ function drop_ship_apply_module_dependencies() {
   drush_log(dt('Finished enabling required modules and uninstalling orphan modules.'), 'ok');
 }
 
+/**
+ * Performs database updates.
+ */
 function drop_ship_update_db() {
   drush_set_context('DRUSH_AFFIRMATIVE', TRUE);
   drush_invoke('updatedb');
 }
 
+/**
+ * Enables and configures stage_file_proxy if environment variable
+ * STAGE_FILE_PROXY_DOMAIN is set.
+ */
 function drop_ship_configure_stage_file_proxy() {
-  $STAGE_FILE_PROXY_DOMAIN = getenv('STAGE_FILE_PROXY_DOMAIN');
+  $stage_file_proxy_domain = getenv('STAGE_FILE_PROXY_DOMAIN');
   $STAGE_FILE_PROXY_ORIGIN_DIR = getenv('STAGE_FILE_PROXY_FILES_DIR');
 
-  !module_exists('stage_file_proxy');
-  if ($STAGE_FILE_PROXY_DOMAIN && !empty($STAGE_FILE_PROXY_DOMAIN)) {
+  if ($stage_file_proxy_domain && !empty($stage_file_proxy_domain)) {
     module_enable(array('stage_file_proxy'));
-    variable_set('stage_file_proxy_origin', $STAGE_FILE_PROXY_DOMAIN);
+    variable_set('stage_file_proxy_origin', $stage_file_proxy_domain);
     if ($STAGE_FILE_PROXY_ORIGIN_DIR && !empty($STAGE_FILE_PROXY_ORIGIN_DIR)) {
       variable_set('stage_file_proxy_origin_dir', $STAGE_FILE_PROXY_ORIGIN_DIR);
     }
